@@ -61,7 +61,7 @@ namespace Mentorat.Class
                     arrayJsons.Add(JsonToProcess[i]);
                 }
             }
-            for (int i = 0; i < arrayJsons.Count(); i++)
+            while(true)
             {
                 if (index < arrayJsons.Count())
                 {
