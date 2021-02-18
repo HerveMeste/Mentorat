@@ -20,31 +20,25 @@ namespace Mentorat
             {
                 Console.WriteLine("Choose your method 1:elementbyId 2:LastElementByWeight 3:AllElementByWeight" +
                     "5 4: GetElementByWeight 5:GetElementByIndex");
-                int numberMethod = Convert.ToInt32(Console.ReadLine());
-                if(numberMethod == 1)
+                string numberMethod = Console.ReadLine();/*Convert.ToInt32(Console.ReadLine());*/
+                List<JsonAttribute> listJson = ChooseListJson();
+                switch (numberMethod)
                 {
-                    List<JsonAttribute> listJson = ChooseListJson();
-                    ElementByLabel(listJson);
-                }
-                if(numberMethod == 2)
-                {
-                    List<JsonAttribute> listJson = ChooseListJson();
-                    LastElementByWeigth(listJson);
-                }
-                if(numberMethod == 3)
-                {
-                    List<JsonAttribute> listJson = ChooseListJson();
-                    AllElementbyWeigth(listJson);
-                }
-                if (numberMethod == 4)
-                {
-                    List<JsonAttribute> listJson = ChooseListJson();
-                    GetElementByWeigth(listJson);
-                }
-                if (numberMethod == 5)
-                {
-                    List<JsonAttribute> listJson = ChooseListJson();
-                    GetElementByIndex(listJson);
+                    case "1":
+                        ElementByLabel(listJson);
+                        break;
+                    case "2":
+                        LastElementByWeigth(listJson);
+                        break;
+                    case "3":
+                        AllElementbyWeigth(listJson);
+                        break;
+                    case "4":
+                        GetElementByWeigth(listJson);
+                        break;
+                    case "5":
+                        GetElementByIndex(listJson);
+                        break;
                 }
 
             }
@@ -52,7 +46,7 @@ namespace Mentorat
 
         private static List<JsonAttribute> ChooseListJson()
         {
-            Console.WriteLine("Choose file1(1K), files2(50k) or 3(1M)");
+            Console.WriteLine("choose a file among these 3 : Files 1 (1k), file2(50k), file3(1M)");
             int userEntryJsonFile = Convert.ToInt32(Console.ReadLine());
             List<JsonAttribute> listJson = new List<JsonAttribute>();
             if (userEntryJsonFile == 1)
