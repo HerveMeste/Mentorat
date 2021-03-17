@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Exercice 1</title>
+</head>
+<body>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2"><h2>Exercice #1 :Search in table</h2></th>
+        <th scope="col" colspan="2"></th>
+      </tr>
+      <tr>
+        <th scope="col" colspan="2">#</th>
+        <th scope="col" colspan="2">
+          <label for="tableSelect" class="m-auto">Choose a table:</label>
+          <select name="tables" id="tableSelect">
+            <option value="">--Please choose an option--</option>
+            <option value="1K">1K.json</option>
+            <option value="1M">1M.json</option>
+            <option value="50K">50K.json</option>
+          </select>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td colspan="2">
+          <label for="inputLabel">choose label to search</label>
+          <input type="text" id="inputLabel" name="inputLabel" value="">
+        </td>
+        <td>
+          <button type="button" id="button" onclick="searchLabel()">Search</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td colspan="2">
+          <label for="inputNumber">choose number </label>
+          <input type="number" id="inputNumber" name="inputNumber" value="">
+        
+          <label for="inputWeight">choose weight </label>
+          <input type="number" id="inputWeight" name="inputWeight" value="">
+        </td>
+        <td>
+          <button type="button" id="button" onclick="searchNumberWeight()">Search</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2"> 
+          <label for="inputWeightLast">choose weight </label>
+          <input type="number" id="inputWeightLast" name="inputWeightLast" value="">
+        </td>
+        <td>
+          <button type="button" id="button" onclick="searchWeightLast()">Search last weight</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td colspan="2">
+          <label for="inputAllLabel">choose label to search all Labels:</label>
+          <input type="text" id="inputAllLabel" name="inputAllLabel" value="">
+        </td>
+        <td><button type="button" id="button" onclick="searchAllLabel()">Search</button></td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td colspan="2">
+          <label for="inputAllLabel">choose number to select:</label>
+          <input type="number" id="inputSelectElement" name="inputSelectElement" value="">
+        </td>
+        <td>
+          <button type="button" id="button" onclick="searchSelectElement()">Search</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="col" colspan="2"><h2>Exercice #2: Sort table</h2></th>
+        <th scope="col" colspan="2"></th>
+      </tr>
+      <tr>
+        <th scope="row">6</th>
+        <td>
+          <button type="button" id="button" onclick="insertionSortWeight()">Insertion sort</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">7</th>
+        <td>
+          <button type="button" id="button" onclick="bubbleSortWeight()">Bubble sort weight</button>
+        </td>
+      </tr>
+      
+      <tr>
+        <th scope="row">8</th>
+        <td>
+          <button type="button" id="button" onclick="bubbleSortOptimize()">Bubble sort optimize</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">9</th>
+        <td>
+          <button type="button" id="button" onclick="fastSortWeight()">Fast sort</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>
+          <button type="button" id="button" onclick="fusionSort()">Fusion sort</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">11</th>
+        <td>
+          weight: <input type="number" id="weightId" />
+        </td>
+        <td>
+          label <input type="text" id="labelId"/>
+        </td>
+        <td>
+          <button type="button" id="buttonAddStart" onclick="addAtStartTable()">Add at start table</button>
+          <button type="button" id="buttonAddEnd" onclick="addAtEndTable()">Add at end table</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">12</th>
+        <td>
+          Choose an id: <input type="number" id="chooseId"/>
+        </td>
+        <td></td>
+        <td>
+          <button type="button" id="buttonAddAtId" onclick="addAtChooseId()">Add at choose id. </button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">13</th>
+        <td>
+          <button type="button" id="buttonAddStart" onclick="addElementAtStartTable()">add at start table algo</button>
+        </td>
+        <td>
+          <button type="button" id="buttonAddEnd" onclick="addElementEndTable()">add element at end table</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">14</th>
+        <td>
+          Choose an id: <input type="number" id="chooseId2"/>
+        </td>
+        <td></td>
+        <td>
+          <button type="button" id="buttonAddAtId2" onclick="addElementAfterChooseId()">Add at choose id. </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <section>
+    <div>
+        <p id="resultSearchLabelId"></p>
+    </div>
+    <div>
+      <p id="resultWeightSearchNumberId"></p>
+    </div>
+    <div>
+      <p id="resultLastWeightSearchId"></p>
+    </div>
+    <div>
+      <p id="resultAllLabelsId"></p>
+    </div>
+    <div>
+      <p id="resultSearchElementId"></p>
+    </div>
+    <div>
+    </div>
+  </section>
+
+    <script type="text/javascript" src="1K.js"></script>
+    <script type="text/javascript" src="1M.js"></script>
+    <script type="text/javascript" src="50K.js"></script>
+    <script type="text/javascript" src="scriptSearchEx1.js"></script>
+    <script type="text/javascript" src="scriptSortEx2.js"></script>
+    <script type="text/javascript" src="QuickSort.js"></script>
+    <script type="text/javascript" src="scriptSortIntegerTable.js"></script>
+    <script type="text/javascript" src="scriptFusionSort.js"></script>
+    <script type="text/javascript" src="scriptEx3.js"></script>
+</body>
+</html>
