@@ -1,4 +1,5 @@
 import Frame from './Frame';
+import Frame2 from './Frame2';
 import { useState } from 'react';
 
 
@@ -44,7 +45,7 @@ const ScoreBoard = () => {
             <Frame/>
             <Frame/>
             <Frame/>
-            <Frame/>
+            <Frame2/>
           </div>
         ))}
       
